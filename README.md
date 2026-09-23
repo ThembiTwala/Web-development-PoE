@@ -40,7 +40,8 @@ Desktop view
 
 
 
-
+REFERENCES
+- Duckett,J.,2011.HTML and CSS: Design and Build Websites. Indianapolis:John Wiley&Sons.
 
 Webpage Structure 
 Web Development PoE
