@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery - Osweizweni Science Center</title>
+        <meta name=" description" content="Explore interactive science, technology, engineering, and mathematics, learning space and student activities at Osizweni Science Centre.">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <header>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="programmes.html">Programmes</a>
+            <a href="booking.html">Booking</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="gallery.html">Gallery</a> 
+        </nav>
+        </header>
+        <section class="gallery-section">
+            <h2>Our Center & Exhibits</h2>
+            <p>Explore our hands-on learning spaces,workshops, and student activities.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/Science.jpg" alt="Science">
+                    <p>Science</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Engineering.jpg" alt="Engineering">
+                    <p>Engineering</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Technology.jpg" alt="Technology">
+                    <p>Technology</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Mathematics.jpg" alt="Mathematics">
+                    <p>Mathematics</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="lightbox" class="lightbox-modal">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-img" id="lightbox-img" src=" " alt="Enlarged view">
+            <div id="lightbox-caption"></div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () =>{
+                const galleryImages = document.querySelectorAll('.gallery-item img');
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const lightboxCaption = document.getElementById('lightbox-caption');
+                const closeBtn = document.querySelector('.close-lightbox');
+
+                galleryImages.forEach(img => {
+                    img.addEventListener('click', () => {
+                        lightbox.style.display ='flex';
+                        lightboxImg.src = img.src;
+                        lightboxCaption.textContent = img.alt;
+                    });
+                });
+                closeBtn.addEventListener('click', () =>{
+                    lightbox.style.display = 'none';
+                });
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target !== lightbox){
+                        lightbox.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

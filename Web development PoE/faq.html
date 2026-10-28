@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale1.0">
+        <meta name="description" content="Find answer to frequently asked questions about Osizweni Science Center.">
+        <title>FAQ - Osweizweni Science Centre</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="programmes.html">Programmes</a>
+                <a href="booking.html">Booking</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="faq.html">FAQ</a> |
+                <a href="gallery.html">Gallery</a> 
+            </nav>
+        </header>
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are the operating hours for Osweizweni Science Centre?
+                        <span class="faq-icon">&#9662;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We are open Monday-Friday from 08:00 to 16:00.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can schools book a science show or workshop?
+                        <span class="faq-icon">&#9662;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Schools can book a visit by heading over to our booking page, filling out the required details, and submitting the form.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are the any entrance fees for the learners and educators?
+                        <span class="faq-icon">&#9662;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Please check our programmes page or contact us directly to get the lastest details on fees and sponsers</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What interactive exhibits can visitors expect to see?
+                        <span class="faq-icon">&#9662;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <P>Visitors can explore hands-on exhibits covering science, mathematics, robotics, and engineering.</P>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded',() => {
+                const faqItems = document.querySelectorAll('.faq-item');
+
+                faqItems.forEach(item => {
+                    const questionBtn = item.querySelector('.faq-question');
+
+                    questionBtn.addEventListener('click', () => {
+                        faqItems.forEach(otherItems => {
+                            if(otherItems !== item) {
+                                otherItems.classList.remove('active');
+                            }
+                        });
+                        item.classList.toggle('active');
+                    });
+                });
+            });
+            </script>
+    </body>
+</html>
